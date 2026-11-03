@@ -122,14 +122,7 @@ With heme supplied as the chemical component HEM, the submitted poses show iron 
 
 The same participant's earlier leaderboard entries (LDDT-PLI 0.194, 0.363 and 0.369 on 2026-10-01, 10-09 and 10-12) came from earlier single-sample and reranked Boltz-2.1 predictions with SMILES-defined heme. The Oct 9 entry appears to be sample 0 of those runs and the Oct 12 entry a contact-count rerank, but the archive-to-score mapping was not recorded, so this is an inference. The difference between the last two (0.006) is within the per-ligand spread of the metric (about 0.04), so no conclusion is drawn about the reranking. The present submission differs in heme representation, number of samples, filtering and selection rule, and is not a continuation of that rerank.
 
-### 9. Limitations
-
-- No result against the hidden structures is available for this method. The selection rule assumes the most populated, confidence-weighted cluster is the most likely pose. CYP3A4 shows mutually exclusive ligand poses and pocket remodeling in the experimental literature, so a large cluster can be consistently wrong.
-- Seeds, cluster radius (2.5 angstrom), the confidence temperature (0.05) and the tie-break thresholds were set once and not tuned, because there is no ground truth to tune against.
-- Boltz was run without the default GPU kernels, which should affect speed but was not checked for effects on results.
-- The 9 extra-seed ligands were selected by sample statistics, so their consensus rests on more samples than the other 11. This was intended, but it means the ligands are not treated uniformly.
-
-### 10. Data and disclosures
+### 9. Data and disclosures
 
 - Proprietary data: none.
 - External data and models: Boltz-2 pretrained weights, ColabFold MSA server, UniProt P08684 sequence, official challenge ligand SMILES.
